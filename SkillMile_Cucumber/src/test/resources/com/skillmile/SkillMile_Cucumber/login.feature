@@ -26,13 +26,15 @@ Feature: Validate Login functionality
     When User clicks on Sign in
     Then User enters username "dan@gmail.com" and password "test@1234"
     Then User click on sign in
-  #@tag2
-  #Scenario Outline: Title of your scenario outline
-    #Given I want to write a step with <name>
-    #When I check for the <value> in step
-    #Then I verify the <status> in step
-#
-    #Examples: 
-      #| name  | value | status  |
-      #| name1 |     5 | success |
-      #| name2 |     7 | Fail    |
+   @LoginData
+  Scenario Outline: Title of your scenario outline
+    Given User is on walmart site
+    When User clicks on Sign in
+    Then User lands on Signin page
+    Then User enters "<username>" and password "<password>" 
+    Then user click Signin Button
+
+    Examples: 
+      | username  | password |
+      | name1@gmail.com |     436d36e38e | 
+      | name2@gmail.com |     7569954ee  |
